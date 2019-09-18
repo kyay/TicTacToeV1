@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace TicTacToeV1
 {
-    public partial class Form1 : Form
+    public partial class frmTicTacToe : Form
     {
-        public Form1()
+        public frmTicTacToe()
         {
             InitializeComponent();
+            lblLabels = new Label[3][3]{{ label1, label4, label7 }, { label2, label5, label8 }, { label3, label6, label9 } };
         }
+
+        private Label[,] lblLabels;
     }
 }
