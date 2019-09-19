@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,5 +79,18 @@ namespace TicTacToeV1
 			}
 			return bdtFirstTile;
 		}
+
+        public static Color GetCorrespondingColor(this BoardTile bdtTile)
+        {
+            switch (bdtTile)
+            {
+                case BoardTile.X:
+                    return Color.DarkCyan;
+                case BoardTile.O:
+                    return Color.DarkOrange;
+                default:
+                    return SystemColors.Control;
+            }
+        }
 	}
 }
