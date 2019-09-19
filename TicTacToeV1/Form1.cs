@@ -41,6 +41,7 @@ namespace TicTacToeV1
 				for (int j = 0; j < bdtBoard.GetLength(1); j++)
 				{
 					lblTiles[i, j].Text = bdtBoard[i, j].GetDescription();
+					lblTiles[i, j].BackColor = SystemColors.Control;
 				}
 			}
 		}
@@ -57,7 +58,8 @@ namespace TicTacToeV1
 			turns++;
 			UpdateBoard();
 			if (turns >= 5) {
-				DisplayWinner(CheckWinner());
+				(Winner winner, WinPattern wptPattern) = CheckWinner();
+				DisplayWinner(winner, wptPattern);
 				if (turns == 9)
 				{
 					DisplayWinner(Winner.Draw);
@@ -65,6 +67,17 @@ namespace TicTacToeV1
 			}
 		}
 
+		private void DisplayWinner(Winner winner, WinPattern wptPattern)
+		{
+			if(wptPattern != WinPattern.None)
+			{
+				foreach((int x, int y) in wptPattern.GetTilePositions())
+				{
+					lblTiles[x, y].BackColor = Color.Green;
+				}
+				DisplayWinner(winner);
+			}
+		}
 		private void DisplayWinner(Winner wnrWinner)
 		{
 			if(wnrWinner != Winner.None)
@@ -74,29 +87,40 @@ namespace TicTacToeV1
 			}
 		}
 
-		private Winner CheckWinner()
+		private (Winner, WinPattern) CheckWinner()
 		{
-			for (int x = 0; x < bdtBoard.GetLength(0); x++)
+			//for (int x = 0; x < bdtBoard.GetLength(0); x++)
+			//{
+			//	if (bdtBoard[x,0] != BoardTile.Empty && bdtBoard[x, 0] == bdtBoard[x, 1] && bdtBoard[x, 1] == bdtBoard[x, 2])
+			//	{
+			//		return bdtBoard[x, 0].ConvertToWinner();
+			//	}
+			//}
+			//for (int y = 0; y < bdtBoard.GetLength(1); y++)
+			//{
+
+			//	if (bdtBoard[0, y] != BoardTile.Empty && bdtBoard[0, y] == bdtBoard[1, y] && bdtBoard[1, y] == bdtBoard[2, y])
+			//	{
+			//		return bdtBoard[0, y].ConvertToWinner();
+			//	}
+			//}
+
+			//if (bdtBoard[1,1] != BoardTile.Empty && ((bdtBoard[0, 0] == bdtBoard[1, 1] && bdtBoard[1, 1] == bdtBoard[2, 2]) || ((bdtBoard[2, 0] == bdtBoard[1, 1]) && bdtBoard[1, 1] == bdtBoard[0, 2])))
+			//{
+			//	return bdtBoard[1, 1].ConvertToWinner();
+			//}
+			//return BoardTile.Empty.ConvertToWinner();
+			foreach(WinPattern wptPattern in Enum.GetValues(typeof(WinPattern)))
 			{
-				if (bdtBoard[x,0] != BoardTile.Empty && bdtBoard[x, 0] == bdtBoard[x, 1] && bdtBoard[x, 1] == bdtBoard[x, 2])
+				if (wptPattern == WinPattern.None)
+					continue;
+				BoardTile bdtWinnerTile = wptPattern.FollowsPattern(bdtBoard);
+				if (bdtWinnerTile != BoardTile.Empty)
 				{
-					return bdtBoard[x, 0].ConvertToWinner();
+					return (bdtWinnerTile.ConvertToWinner(), wptPattern);
 				}
 			}
-			for (int y = 0; y < bdtBoard.GetLength(1); y++)
-			{
-
-				if (bdtBoard[0, y] != BoardTile.Empty && bdtBoard[0, y] == bdtBoard[1, y] && bdtBoard[1, y] == bdtBoard[2, y])
-				{
-					return bdtBoard[0, y].ConvertToWinner();
-				}
-			}
-
-			if (bdtBoard[1,1] != BoardTile.Empty && ((bdtBoard[0, 0] == bdtBoard[1, 1] && bdtBoard[1, 1] == bdtBoard[2, 2]) || ((bdtBoard[2, 0] == bdtBoard[1, 1]) && bdtBoard[1, 1] == bdtBoard[0, 2])))
-			{
-				return bdtBoard[1, 1].ConvertToWinner();
-			}
-			return BoardTile.Empty.ConvertToWinner();
+			return (BoardTile.Empty.ConvertToWinner(), WinPattern.None);
 		}
 
 		private (int, int) GetTilePosition(Label lblTile)
