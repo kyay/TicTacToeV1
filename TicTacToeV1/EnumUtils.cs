@@ -8,21 +8,27 @@ using System.Threading.Tasks;
 
 namespace TicTacToeV1
 {
+    //A class that has various methods for dealing with enums generally and our specific enums.
 	public static class EnumUtils
 	{
+         
+        //Returns either the DescriptionAttribute value of this enum or its string representation if it doesn't have one
 		public static string GetDescription(this Enum en)
 		{
 			try
 			{
+                //Get the MemberInfo object for that specific enum value from its enum Type and then get the DescriptionAttribute from it and retrieve the description from that
 				return ((DescriptionAttribute)(en.GetType().GetMember(en.ToString()).FirstOrDefault()
 					.GetCustomAttributes(typeof(DescriptionAttribute), true)[0])).Description;
 			}
 			catch (Exception e)
 			{
+                //Failsafe: just return the string representation of that enum value
 				return en.ToString();
 			}
 		}
 
+        //Converts a board tile to a winner
 		public static Winner ConvertToWinner(this BoardTile bdtWinnerTile)
 		{
 			switch (bdtWinnerTile)
@@ -36,34 +42,43 @@ namespace TicTacToeV1
 			}
 		}
 
+        //Gets the tile positions that this pattern follows
 		public static (int, int)[] GetTilePositions(this WinPattern wptPattern)
 		{
 			int x = -1;
 			int y = -1;
 			switch (wptPattern)
 			{
-				case WinPattern.Column1:
-					x = 0;
-					goto case WinPattern.Column3;
-				case WinPattern.Column2:
-					x = 1;
-					goto case WinPattern.Column3;
-				case WinPattern.Column3:
-					x = x == -1 ? 2 : x;
-					return new(int, int)[] { (x, 0), (x, 1), (x, 2) };
+                //Handles rows
 				case WinPattern.Row1:
-					y = 0;
+					x = 0;
 					goto case WinPattern.Row3;
 				case WinPattern.Row2:
-					y = 1;
+					x = 1;
 					goto case WinPattern.Row3;
 				case WinPattern.Row3:
-					y = y == -1 ? 2 : y;
-					return new(int, int)[] { (0, y), (1, y), (2, y) };
+                    //If x wasn't set by any past Row, then set it to 2
+					x = x == -1 ? 2 : x;
+                    //Return a row pattern
+					return new(int, int)[] { (x, 0), (x, 1), (x, 2) };
+                //Handles columns
+                case WinPattern.Column1:
+					y = 0;
+					goto case WinPattern.Column3;
+				case WinPattern.Column2:
+					y = 1;
+					goto case WinPattern.Column3;
+				case WinPattern.Column3:
+                    //If y wasn't set by any past Column, then set it to 2
+                    y = y == -1 ? 2 : y;
+                    //Return a column pattern
+                    return new (int, int)[] { (0, y), (1, y), (2, y) };
+                //Handles diagonals
 				case WinPattern.Diagonal1:
 					return new(int, int)[] { (0, 0), (1, 1), (2, 2) };
 				case WinPattern.Diagonal2:
 					return new(int, int)[] { (2, 0), (1, 1), (0, 2) };
+                //We don't care about any other pattern, so throw an exception
 				default:
 					throw new ArgumentException("The provided WinPattern is not supported");
 			}
