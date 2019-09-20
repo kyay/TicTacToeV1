@@ -83,6 +83,8 @@ namespace TicTacToeV1
 					throw new ArgumentException("The provided WinPattern is not supported");
 			}
 		}
+        //Checks to see if the 2d array of BoardTiles matches the pattern defined in the WinPattern, and if so, returns which type of tile follows it.
+        //If the board doesn't follow the pattern, this function returns BoardTile.Empty
 		public static BoardTile FollowsPattern(this WinPattern wptPattern, BoardTile[,] bdtBoard)
 		{
 			(int, int)[] intPatternPositions = wptPattern.GetTilePositions();
@@ -95,6 +97,7 @@ namespace TicTacToeV1
 			return bdtFirstTile;
 		}
 
+        //Returns the respective color for the specified BoardTile
         public static Color GetCorrespondingColor(this BoardTile bdtTile)
         {
             switch (bdtTile)
