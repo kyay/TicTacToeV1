@@ -34,13 +34,18 @@ namespace TicTacToeV1
         private int intXScore = 0;
         private int intOScore = 0;
 
+        private int intXTime = 0;
+        private int intOTime = 0;
+
         //Resets the board visually and in the underlying data
-		private void ResetBoard()
+        private void ResetBoard()
 		{
             //Reset all the board tiles to BoardTile.Empty (which is the default value because it is the first value)
 			bdtBoard = new BoardTile[3, 3];
             //Reset the number of turns
 			intTurns = 0;
+            intXTime = 0;
+            intOTime = 0;
             //Update the score on the screen
             UpdateScore();
             //Update the visual labels so that they are in sync with the board
@@ -70,8 +75,9 @@ namespace TicTacToeV1
 		{
             //Get the position of the label that was clicked
 			(int posX, int posY) = GetTilePosition(((Label)sender));
-            //Add the user's symbol to that position on the board array
-			HandleTilePlacedOn(posX, posY);
+            if(bdtBoard[posX, posY] == BoardTile.Empty)
+                //Add the user's symbol to that position on the board array
+			    HandleTilePlacedOn(posX, posY);
 		}
 
 		private void HandleTilePlacedOn(int posX, int posY)
@@ -132,7 +138,7 @@ namespace TicTacToeV1
                 //Show the score on the screen
                 UpdateScore();
                 //Show the winning message based on the winner (this is an extension function)
-				MessageBox.Show(wnrWinner.GetDescription());
+				MessageBox.Show(wnrWinner.GetDescription() + (wnrWinner == Winner.Draw ? (intXTime < intOTime ? " But X took less time, so X wins" : (intOTime < intXTime ? " But O took less time, so O wins" : "")) : ""));
                 //Reset the board to its original state
 				ResetBoard();
 			}
@@ -191,5 +197,13 @@ namespace TicTacToeV1
             lblXScore.Text = "X: " + intXScore;
             lblOScore.Text = "O: " + intOScore;
         }
-	}
+
+        private void trmPlayerTimeCounter_Tick(object sender, EventArgs e)
+        {
+            if (intTurns % 2 == 0)
+                intXTime++;
+            else
+                intOTime++;
+        }
+    }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTile9 = new System.Windows.Forms.Label();
             this.lblTile8 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.lblTile1 = new System.Windows.Forms.Label();
             this.lblXScore = new System.Windows.Forms.Label();
             this.lblOScore = new System.Windows.Forms.Label();
+            this.trmPlayerTimeCounter = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -189,6 +191,12 @@
             this.lblOScore.TabIndex = 2;
             this.lblOScore.Text = "O: 99";
             // 
+            // trmPlayerTimeCounter
+            // 
+            this.trmPlayerTimeCounter.Enabled = true;
+            this.trmPlayerTimeCounter.Interval = 1000;
+            this.trmPlayerTimeCounter.Tick += new System.EventHandler(this.trmPlayerTimeCounter_Tick);
+            // 
             // frmTicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +226,7 @@
         private System.Windows.Forms.Label lblTile7;
         private System.Windows.Forms.Label lblXScore;
         private System.Windows.Forms.Label lblOScore;
+        private System.Windows.Forms.Timer trmPlayerTimeCounter;
     }
 }
 
