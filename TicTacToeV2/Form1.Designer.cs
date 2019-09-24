@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblTile9 = new System.Windows.Forms.Label();
-            this.lblTile8 = new System.Windows.Forms.Label();
-            this.lblTile7 = new System.Windows.Forms.Label();
-            this.lblTile6 = new System.Windows.Forms.Label();
-            this.lblTile5 = new System.Windows.Forms.Label();
-            this.lblTile4 = new System.Windows.Forms.Label();
-            this.lblTile3 = new System.Windows.Forms.Label();
-            this.lblTile2 = new System.Windows.Forms.Label();
-            this.lblTile1 = new System.Windows.Forms.Label();
-            this.lblXScore = new System.Windows.Forms.Label();
-            this.lblOScore = new System.Windows.Forms.Label();
-            this.trmPlayerTimeCounter = new System.Windows.Forms.Timer(this.components);
+            this.lblTile9 = new TicTacToeV1.FadingLabel();
+            this.lblTile8 = new TicTacToeV1.FadingLabel();
+            this.lblTile7 = new TicTacToeV1.FadingLabel();
+            this.lblTile6 = new TicTacToeV1.FadingLabel();
+            this.lblTile5 = new TicTacToeV1.FadingLabel();
+            this.lblTile4 = new TicTacToeV1.FadingLabel();
+            this.lblTile3 = new TicTacToeV1.FadingLabel();
+            this.lblTile2 = new TicTacToeV1.FadingLabel();
+            this.lblTile1 = new TicTacToeV1.FadingLabel();
+            this.lblXScore = new TicTacToeV1.FadingLabel();
+            this.lblOScore = new TicTacToeV1.FadingLabel();
+            this.tmrPlayerTimeCounter = new System.Windows.Forms.Timer(this.components);
+            this.tmrFader = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,8 +65,11 @@
             // 
             // lblTile9
             // 
+            this.lblTile9.Alpha = 0;
             this.lblTile9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile9.FadeSpeed = 0;
             this.lblTile9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile9.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile9.Location = new System.Drawing.Point(125, 125);
             this.lblTile9.Name = "lblTile9";
             this.lblTile9.Size = new System.Drawing.Size(50, 45);
@@ -74,10 +78,14 @@
             this.lblTile9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTile9.Click += new System.EventHandler(this.lblTile_Click);
             // 
+            // 
             // lblTile8
             // 
+            this.lblTile8.Alpha = 0;
             this.lblTile8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile8.FadeSpeed = 0;
             this.lblTile8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile8.Location = new System.Drawing.Point(65, 125);
             this.lblTile8.Name = "lblTile8";
             this.lblTile8.Size = new System.Drawing.Size(50, 45);
@@ -88,8 +96,11 @@
             // 
             // lblTile7
             // 
+            this.lblTile7.Alpha = 0;
             this.lblTile7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile7.FadeSpeed = 0;
             this.lblTile7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile7.Location = new System.Drawing.Point(5, 125);
             this.lblTile7.Name = "lblTile7";
             this.lblTile7.Size = new System.Drawing.Size(50, 45);
@@ -100,8 +111,11 @@
             // 
             // lblTile6
             // 
+            this.lblTile6.Alpha = 0;
             this.lblTile6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile6.FadeSpeed = 0;
             this.lblTile6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile6.Location = new System.Drawing.Point(125, 70);
             this.lblTile6.Name = "lblTile6";
             this.lblTile6.Size = new System.Drawing.Size(50, 45);
@@ -112,8 +126,11 @@
             // 
             // lblTile5
             // 
+            this.lblTile5.Alpha = 0;
             this.lblTile5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile5.FadeSpeed = 0;
             this.lblTile5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile5.Location = new System.Drawing.Point(65, 70);
             this.lblTile5.Name = "lblTile5";
             this.lblTile5.Size = new System.Drawing.Size(50, 45);
@@ -124,8 +141,11 @@
             // 
             // lblTile4
             // 
+            this.lblTile4.Alpha = 0;
             this.lblTile4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile4.FadeSpeed = 0;
             this.lblTile4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile4.Location = new System.Drawing.Point(5, 70);
             this.lblTile4.Name = "lblTile4";
             this.lblTile4.Size = new System.Drawing.Size(50, 45);
@@ -136,8 +156,11 @@
             // 
             // lblTile3
             // 
+            this.lblTile3.Alpha = 0;
             this.lblTile3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile3.FadeSpeed = 0;
             this.lblTile3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile3.Location = new System.Drawing.Point(125, 15);
             this.lblTile3.Name = "lblTile3";
             this.lblTile3.Size = new System.Drawing.Size(50, 45);
@@ -148,9 +171,12 @@
             // 
             // lblTile2
             // 
+            this.lblTile2.Alpha = 0;
             this.lblTile2.BackColor = System.Drawing.SystemColors.Control;
             this.lblTile2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile2.FadeSpeed = 0;
             this.lblTile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile2.Location = new System.Drawing.Point(65, 15);
             this.lblTile2.Name = "lblTile2";
             this.lblTile2.Size = new System.Drawing.Size(50, 45);
@@ -161,8 +187,11 @@
             // 
             // lblTile1
             // 
+            this.lblTile1.Alpha = 0;
             this.lblTile1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTile1.FadeSpeed = 0;
             this.lblTile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTile1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblTile1.Location = new System.Drawing.Point(5, 15);
             this.lblTile1.Name = "lblTile1";
             this.lblTile1.Size = new System.Drawing.Size(50, 45);
@@ -173,6 +202,8 @@
             // 
             // lblXScore
             // 
+            this.lblXScore.Alpha = 0;
+            this.lblXScore.FadeSpeed = 0;
             this.lblXScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXScore.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblXScore.Location = new System.Drawing.Point(198, 23);
@@ -183,6 +214,8 @@
             // 
             // lblOScore
             // 
+            this.lblOScore.Alpha = 0;
+            this.lblOScore.FadeSpeed = 0;
             this.lblOScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOScore.ForeColor = System.Drawing.Color.DarkOrange;
             this.lblOScore.Location = new System.Drawing.Point(198, 133);
@@ -191,11 +224,17 @@
             this.lblOScore.TabIndex = 2;
             this.lblOScore.Text = "O: 99";
             // 
-            // trmPlayerTimeCounter
+            // tmrPlayerTimeCounter
             // 
-            this.trmPlayerTimeCounter.Enabled = true;
-            this.trmPlayerTimeCounter.Interval = 1000;
-            this.trmPlayerTimeCounter.Tick += new System.EventHandler(this.trmPlayerTimeCounter_Tick);
+            this.tmrPlayerTimeCounter.Enabled = true;
+            this.tmrPlayerTimeCounter.Interval = 1000;
+            this.tmrPlayerTimeCounter.Tick += new System.EventHandler(this.trmPlayerTimeCounter_Tick);
+            // 
+            // tmrFader
+            // 
+            this.tmrFader.Enabled = true;
+            this.tmrFader.Interval = 16;
+            this.tmrFader.Tick += new System.EventHandler(this.tmrFader_Tick);
             // 
             // frmTicTacToe
             // 
@@ -215,18 +254,19 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblTile6;
-        private System.Windows.Forms.Label lblTile5;
-        private System.Windows.Forms.Label lblTile4;
-        private System.Windows.Forms.Label lblTile3;
-        private System.Windows.Forms.Label lblTile2;
-        private System.Windows.Forms.Label lblTile1;
-        private System.Windows.Forms.Label lblTile9;
-        private System.Windows.Forms.Label lblTile8;
-        private System.Windows.Forms.Label lblTile7;
-        private System.Windows.Forms.Label lblXScore;
-        private System.Windows.Forms.Label lblOScore;
-        private System.Windows.Forms.Timer trmPlayerTimeCounter;
+        private FadingLabel lblTile6;
+        private FadingLabel lblTile5;
+        private FadingLabel lblTile4;
+        private FadingLabel lblTile3;
+        private FadingLabel lblTile2;
+        private FadingLabel lblTile1;
+        private FadingLabel lblTile9;
+        private FadingLabel lblTile8;
+        private FadingLabel lblTile7;
+        private FadingLabel lblXScore;
+        private FadingLabel lblOScore;
+        private System.Windows.Forms.Timer tmrPlayerTimeCounter;
+        private System.Windows.Forms.Timer tmrFader;
     }
 }
 

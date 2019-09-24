@@ -205,5 +205,10 @@ namespace TicTacToeV1
             else
                 intOTime++;
         }
+
+        private void tmrFader_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

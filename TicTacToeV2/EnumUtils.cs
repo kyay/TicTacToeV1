@@ -21,7 +21,7 @@ namespace TicTacToeV1
 				return ((DescriptionAttribute)(en.GetType().GetMember(en.ToString()).FirstOrDefault()
 					.GetCustomAttributes(typeof(DescriptionAttribute), true)[0])).Description;
 			}
-			catch (Exception e)
+			catch (Exception ignored)
 			{
                 //Failsafe: just return the string representation of that enum value
 				return en.ToString();

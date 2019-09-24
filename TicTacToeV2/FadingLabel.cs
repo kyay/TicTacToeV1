@@ -10,18 +10,19 @@ namespace TicTacToeV1
 {
     public class FadingLabel : Label
     {
-        private double alpha = 255;
-        public double FadeSpeed { get; set; }
-        public double Alpha {
+        private int alpha = 255;
+        public int FadeSpeed { get; set; }
+        public int Alpha {
             get {
                 return alpha;
-            } set
+            }
+            set
             {
                 alpha = value;
                 ForeColor = ForeColor;
             }
         }
 
-        public override Color ForeColor { get => base.ForeColor; set => base.ForeColor = value; }
+        public override Color ForeColor { get => Color.FromArgb(Alpha, base.ForeColor); set => base.ForeColor = value; }
     }
 }
