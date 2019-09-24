@@ -50,6 +50,11 @@ namespace TicTacToeV1
             UpdateScore();
             //Update the visual labels so that they are in sync with the board
 			UpdateBoard();
+
+            foreach(FadingLabel lblFadingLabel in lblTiles)
+            {
+                lblFadingLabel.Alpha = 0;
+            }
 		}
 
         //Updates the visual board
@@ -208,7 +213,11 @@ namespace TicTacToeV1
 
         private void tmrFader_Tick(object sender, EventArgs e)
         {
-
+            foreach(FadingLabel lblFadingLabel in lblTiles)
+            {
+                if(lblFadingLabel.Text != "")
+                    lblFadingLabel.Alpha += lblFadingLabel.FadeSpeed;
+            }
         }
     }
 }

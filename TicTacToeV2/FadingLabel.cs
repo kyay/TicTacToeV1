@@ -10,7 +10,7 @@ namespace TicTacToeV1
 {
     public class FadingLabel : Label
     {
-        private int alpha = 255;
+        private int alpha = 0;
         public int FadeSpeed { get; set; }
         public int Alpha {
             get {
@@ -18,11 +18,22 @@ namespace TicTacToeV1
             }
             set
             {
+                if (value > 255)
+                {
+                    value = 255;
+                }
+                if(value < 0)
+                {
+                    value = 0;
+                }
                 alpha = value;
-                ForeColor = ForeColor;
+                Console.WriteLine(alpha.ToString());
+                Refresh();
             }
         }
 
-        public override Color ForeColor { get => Color.FromArgb(Alpha, base.ForeColor); set => base.ForeColor = value; }
+
+        public override Color ForeColor { get => base.ForeColor.Blend(SystemColors.Control, alpha / 255d); set => base.ForeColor = value; }
     }
+
 }
