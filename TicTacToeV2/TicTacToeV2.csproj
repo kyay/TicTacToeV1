@@ -53,6 +53,7 @@
     <Compile Include="FadingLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Player.cs" />
     <Compile Include="Winner.cs" />
     <Compile Include="BoardTile.cs" />
     <Compile Include="EnumUtils.cs" />
