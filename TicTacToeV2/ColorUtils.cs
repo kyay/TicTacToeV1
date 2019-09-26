@@ -17,11 +17,9 @@ namespace TicTacToeV1
         /// <returns>The blended colors.</returns>
         public static Color Blend(this Color color, Color backColor, double amount)
         {
-            Console.WriteLine(amount.ToString());
             byte r = (byte)((color.R * amount) + backColor.R * (1 - amount));
             byte g = (byte)((color.G * amount) + backColor.G * (1 - amount));
             byte b = (byte)((color.B * amount) + backColor.B * (1 - amount));
-            //Console.WriteLine(r.ToString() + " " + g.ToString() + " " + b.ToString() + " ");
             return Color.FromArgb(r, g, b);
         }
     }

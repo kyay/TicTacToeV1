@@ -27,7 +27,6 @@ namespace TicTacToeV1
                     value = 0;
                 }
                 alpha = value;
-                Console.WriteLine(alpha.ToString());
                 Refresh();
             }
         }

@@ -82,9 +82,9 @@ namespace TicTacToeV1
             this.lblOScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
             this.lblOScore.Location = new System.Drawing.Point(198, 133);
             this.lblOScore.Name = "lblOScore";
-            this.lblOScore.Size = new System.Drawing.Size(107, 45);
+            this.lblOScore.Size = new System.Drawing.Size(305, 45);
             this.lblOScore.TabIndex = 2;
-            this.lblOScore.Text = "O: 99";
+            this.lblOScore.Text = "Test: 99";
             // 
             // lblXScore
             // 
@@ -92,9 +92,9 @@ namespace TicTacToeV1
             this.lblXScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
             this.lblXScore.Location = new System.Drawing.Point(198, 23);
             this.lblXScore.Name = "lblXScore";
-            this.lblXScore.Size = new System.Drawing.Size(107, 45);
+            this.lblXScore.Size = new System.Drawing.Size(305, 45);
             this.lblXScore.TabIndex = 1;
-            this.lblXScore.Text = "X: 99";
+            this.lblXScore.Text = "Test: 99";
             // 
             // lblTile9
             // 
@@ -102,7 +102,7 @@ namespace TicTacToeV1
             this.lblTile9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile9.FadeSpeed = 42;
             this.lblTile9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile9.Location = new System.Drawing.Point(125, 125);
             this.lblTile9.Name = "lblTile9";
             this.lblTile9.Size = new System.Drawing.Size(50, 45);
@@ -117,7 +117,7 @@ namespace TicTacToeV1
             this.lblTile8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile8.FadeSpeed = 42;
             this.lblTile8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile8.Location = new System.Drawing.Point(65, 125);
             this.lblTile8.Name = "lblTile8";
             this.lblTile8.Size = new System.Drawing.Size(50, 45);
@@ -132,7 +132,7 @@ namespace TicTacToeV1
             this.lblTile7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile7.FadeSpeed = 42;
             this.lblTile7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile7.Location = new System.Drawing.Point(5, 125);
             this.lblTile7.Name = "lblTile7";
             this.lblTile7.Size = new System.Drawing.Size(50, 45);
@@ -147,7 +147,7 @@ namespace TicTacToeV1
             this.lblTile6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile6.FadeSpeed = 42;
             this.lblTile6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile6.Location = new System.Drawing.Point(125, 70);
             this.lblTile6.Name = "lblTile6";
             this.lblTile6.Size = new System.Drawing.Size(50, 45);
@@ -162,7 +162,7 @@ namespace TicTacToeV1
             this.lblTile5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile5.FadeSpeed = 42;
             this.lblTile5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile5.Location = new System.Drawing.Point(65, 70);
             this.lblTile5.Name = "lblTile5";
             this.lblTile5.Size = new System.Drawing.Size(50, 45);
@@ -177,7 +177,7 @@ namespace TicTacToeV1
             this.lblTile4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile4.FadeSpeed = 42;
             this.lblTile4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile4.Location = new System.Drawing.Point(5, 70);
             this.lblTile4.Name = "lblTile4";
             this.lblTile4.Size = new System.Drawing.Size(50, 45);
@@ -192,7 +192,7 @@ namespace TicTacToeV1
             this.lblTile3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile3.FadeSpeed = 42;
             this.lblTile3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile3.Location = new System.Drawing.Point(125, 15);
             this.lblTile3.Name = "lblTile3";
             this.lblTile3.Size = new System.Drawing.Size(50, 45);
@@ -208,7 +208,7 @@ namespace TicTacToeV1
             this.lblTile2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile2.FadeSpeed = 42;
             this.lblTile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile2.Location = new System.Drawing.Point(65, 15);
             this.lblTile2.Name = "lblTile2";
             this.lblTile2.Size = new System.Drawing.Size(50, 45);
@@ -223,7 +223,7 @@ namespace TicTacToeV1
             this.lblTile1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTile1.FadeSpeed = 42;
             this.lblTile1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTile1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lblTile1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.lblTile1.Location = new System.Drawing.Point(5, 15);
             this.lblTile1.Name = "lblTile1";
             this.lblTile1.Size = new System.Drawing.Size(50, 45);
@@ -236,12 +236,13 @@ namespace TicTacToeV1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 209);
+            this.ClientSize = new System.Drawing.Size(515, 209);
             this.Controls.Add(this.lblOScore);
             this.Controls.Add(this.lblXScore);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTicTacToe";
             this.Text = "Tic Tac Toe";
+            this.Load += new System.EventHandler(this.frmTicTacToe_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 

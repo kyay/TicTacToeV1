@@ -8,13 +8,13 @@ namespace TicTacToeV1
         //There is no winner and it isn't a draw
 		None,
         //The winner is X
-		[Description("X wins!!")]
+		[Description("{0} wins!!")]
 		X,
         //The winner is O
-        [Description("O wins!!")]
+        [Description("{0} wins!!")]
 		O,
         //There is no winner and it's a draw
-        [Description("It's a draw!!!")]
+        [Description("It's a {0}!!!")]
 		Draw
 	}
 }
