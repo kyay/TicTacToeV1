@@ -122,5 +122,14 @@ namespace TicTacToeV1
             fastestGameTime = GameTime < FastestGameTime ? GameTime : FastestGameTime;
         }
 
+        public override string ToString()
+        {
+            return "Player symbol:" + Winner.ToString() + "\n" +
+                "Player name: " + PlayerName + "\n" +
+                "Win count: " + WinCount + "\n" +
+                "Loss count: " + LossCount + "\n" +
+                "Draw count: " + DrawCount + "\n" +
+                "Fastest Game Time: " + FastestGameTime;
+        }
     }
 }

@@ -44,7 +44,12 @@ namespace TicTacToeV1
             this.tmrFader = new System.Windows.Forms.Timer(this.components);
             this.lblOScore = new System.Windows.Forms.Label();
             this.lblXScore = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -58,7 +63,7 @@ namespace TicTacToeV1
             this.groupBox1.Controls.Add(this.lblTile3);
             this.groupBox1.Controls.Add(this.lblTile2);
             this.groupBox1.Controls.Add(this.lblTile1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(180, 185);
             this.groupBox1.TabIndex = 0;
@@ -215,7 +220,7 @@ namespace TicTacToeV1
             // 
             this.lblOScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
-            this.lblOScore.Location = new System.Drawing.Point(198, 133);
+            this.lblOScore.Location = new System.Drawing.Point(198, 148);
             this.lblOScore.Name = "lblOScore";
             this.lblOScore.Size = new System.Drawing.Size(305, 45);
             this.lblOScore.TabIndex = 2;
@@ -225,25 +230,63 @@ namespace TicTacToeV1
             // 
             this.lblXScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblXScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
-            this.lblXScore.Location = new System.Drawing.Point(198, 23);
+            this.lblXScore.Location = new System.Drawing.Point(198, 38);
             this.lblXScore.Name = "lblXScore";
             this.lblXScore.Size = new System.Drawing.Size(305, 45);
             this.lblXScore.TabIndex = 1;
             this.lblXScore.Text = "Test: 99";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(515, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem,
+            this.showStatsToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // showStatsToolStripMenuItem
+            // 
+            this.showStatsToolStripMenuItem.Name = "showStatsToolStripMenuItem";
+            this.showStatsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showStatsToolStripMenuItem.Text = "Show Stats";
+            this.showStatsToolStripMenuItem.Click += new System.EventHandler(this.showStatsToolStripMenuItem_Click);
+            // 
             // frmTicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 209);
+            this.ClientSize = new System.Drawing.Size(515, 226);
             this.Controls.Add(this.lblOScore);
             this.Controls.Add(this.lblXScore);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTicTacToe";
             this.Text = "Tic Tac Toe";
             this.Load += new System.EventHandler(this.frmTicTacToe_Load);
             this.groupBox1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -263,6 +306,10 @@ namespace TicTacToeV1
         private System.Windows.Forms.Label lblOScore;
         private System.Windows.Forms.Timer tmrPlayerTimeCounter;
         private System.Windows.Forms.Timer tmrFader;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showStatsToolStripMenuItem;
     }
 }
 

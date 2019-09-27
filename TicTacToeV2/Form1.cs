@@ -125,6 +125,7 @@ namespace TicTacToeV1
                 DisplayWinner(winner);
             }
         }
+
         //Displays the winner in a message box on the screen
         private void DisplayWinner(Winner wnrWinner)
         {
@@ -227,6 +228,16 @@ namespace TicTacToeV1
             plrO = new Player(Winner.O, Microsoft.VisualBasic.Interaction.InputBox("Please enter Player O's name:", "Player O"));
             UpdateScore();
             tmrPlayerTimeCounter.Start();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void showStatsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(plrX.ToString() + "\n" + plrO.ToString());
         }
     }
 }
