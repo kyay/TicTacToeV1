@@ -43,8 +43,8 @@ namespace TicTacToeV1
             intTurns = 0;
             if (plrX != null && plrO != null)
             {
-                plrX.intGameTime = 0;
-                plrO.intGameTime = 0;
+                plrX.GameTime = 0;
+                plrO.GameTime = 0;
             }
             //Update the score on the screen
             UpdateScore();
@@ -102,7 +102,7 @@ namespace TicTacToeV1
                 //Display winner will reset the turns if there is a winner, so if it didn't reset, and there are no open positions, then it's a draw
                 if (intTurns == 9)
                 {
-                    DisplayWinner(Winner.Draw);
+                    DisplayWinner(plrX.GameTime < plrO.GameTime ? Winner.DrawX : (plrO.GameTime < plrX.GameTime ? Winner.DrawO : Winner.Draw));
                 }
             }
         }
@@ -132,7 +132,9 @@ namespace TicTacToeV1
             if (wnrWinner != Winner.None)
             {
                 plrX.OnWinnerAnnounced(wnrWinner);
+                plrX.OnGameEnded();
                 plrO.OnWinnerAnnounced(wnrWinner);
+                plrO.OnGameEnded();
                 //Show the score on the screen
                 UpdateScore();
                 //Show the winning message based on the winner (this is an extension function)
@@ -194,8 +196,8 @@ namespace TicTacToeV1
         {
             if (plrX != null && plrO != null)
             {
-                lblXScore.Text = plrX.strPlayerName + ": " + plrX.intWinCount;
-                lblOScore.Text = plrO.strPlayerName + ": " + plrO.intWinCount;
+                lblXScore.Text = plrX.PlayerName + ": " + plrX.WinCount;
+                lblOScore.Text = plrO.PlayerName + ": " + plrO.WinCount;
             }
         }
 
@@ -204,9 +206,9 @@ namespace TicTacToeV1
             if (plrX != null && plrO != null)
             {
                 if (intTurns % 2 == 0)
-                    plrX.intGameTime++;
+                    plrX.GameTime++;
                 else
-                    plrO.intGameTime++;
+                    plrO.GameTime++;
             }
         }
 
@@ -224,6 +226,7 @@ namespace TicTacToeV1
             plrX = new Player(Winner.X, Microsoft.VisualBasic.Interaction.InputBox("Please enter Player X's name:", "Player X"));
             plrO = new Player(Winner.O, Microsoft.VisualBasic.Interaction.InputBox("Please enter Player O's name:", "Player O"));
             UpdateScore();
+            tmrPlayerTimeCounter.Start();
         }
     }
 }

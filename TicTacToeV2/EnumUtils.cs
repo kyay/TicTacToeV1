@@ -114,19 +114,19 @@ namespace TicTacToeV1
         public static string GetWinMessage(this Winner wnrWinner, params Player[] plrPlayers)
         {
             string strWinMessage = "";
-            Player plrFastestPlayer = null;
+            //Player plrFastestPlayer = null;
             foreach (Player plrPlayer in plrPlayers)
             {
-                if (plrPlayer.wnrWinner == wnrWinner)
+                if (plrPlayer.Winner == wnrWinner || plrPlayer.Winner.GetDrawEquivalentForWinner() == wnrWinner)
                 {
-                    strWinMessage = string.Format(wnrWinner.GetDescription(), plrPlayer.strPlayerName);
+                    strWinMessage = string.Format(wnrWinner.GetDescription(), plrPlayer.PlayerName, Player.strDefaultDrawName);
                 }
-                if(plrFastestPlayer == null || plrFastestPlayer.intFastestGameTime > plrPlayer.intFastestGameTime)
-                {
-                    plrFastestPlayer = plrPlayer;
-                }
+                //if (plrFastestPlayer == null || plrFastestPlayer.FastestGameTime > plrPlayer.FastestGameTime)
+                //{
+                //    plrFastestPlayer = plrPlayer;
+                //}
             }
-            
+
             if (strWinMessage == "")
                 switch (wnrWinner)
                 {
@@ -139,14 +139,33 @@ namespace TicTacToeV1
                     case Winner.Draw:
                         strWinMessage = string.Format(wnrWinner.GetDescription(), Player.strDefaultDrawName);
                         break;
+                    case Winner.DrawX:
+                        strWinMessage = string.Format(wnrWinner.GetDescription(), Player.strDefaultXName, Player.strDefaultDrawName);
+                        break;
+                    case Winner.DrawO:
+                        strWinMessage = string.Format(wnrWinner.GetDescription(), Player.strDefaultOName, Player.strDefaultDrawName);
+                        break;
                     default:
                         strWinMessage = string.Format(wnrWinner.GetDescription(), Player.strDefaultName);
                         break;
 
                 }
-            if(plrFastestPlayer != null)
-                strWinMessage += (wnrWinner == Winner.Draw ? " But " + plrFastestPlayer.strPlayerName + " took less time, so " + plrFastestPlayer.strPlayerName + " wins" : "");
+            //if (plrFastestPlayer != null)
+            //    strWinMessage += (wnrWinner == Winner.Draw ? " But " + plrFastestPlayer.PlayerName + " took less time, so " + plrFastestPlayer.PlayerName + " wins" : "");
             return strWinMessage;
+
+        }
+        public static Winner GetDrawEquivalentForWinner(this Winner wnrWinner)
+        {
+            switch (wnrWinner)
+            {
+                case Winner.X:
+                    return Winner.DrawX;
+                case Winner.O:
+                    return Winner.DrawO;
+                default:
+                    return Winner.Draw;
+            }
         }
     }
 }

@@ -12,26 +12,80 @@ namespace TicTacToeV1
         public const string strDefaultOName = "O";
         public const string strDefaultDrawName = "Draw";
         public const string strDefaultName = "Default";
-        public Winner wnrWinner { get; private set; }
-        public int intWinCount { get; private set; }
-        public int intLossCount { get; private set; }
-        public int intDrawCount { get; private set; }
-        public string strPlayerName { get; private set; }
-        public int intFastestGameTime { get; private set; }
-        public int intGameTime { get; set; }
+        private Winner winner;
+        private int winCount;
+        private int lossCount;
+        private int drawCount;
+        private string playerName;
+        private int fastestGameTime = int.MaxValue;
+        private int gameTime;
+
+        public Winner Winner
+        {
+            get
+            {
+                return winner;
+            }
+        }
+        public int WinCount
+        {
+            get
+            {
+                return winCount;
+            }
+        }
+        public int LossCount
+        {
+            get
+            {
+                return lossCount;
+            }
+        }
+        public int DrawCount
+        {
+            get
+            {
+                return drawCount;
+            }
+        }
+        public string PlayerName
+        {
+            get
+            {
+                return playerName;
+            }
+        }
+        public int FastestGameTime
+        {
+            get
+            {
+                return fastestGameTime;
+            }
+        }
+        public int GameTime
+        {
+            get
+            {
+                return gameTime;
+            }
+            set
+            {
+                gameTime = value;
+            }
+        }
 
         public Player()
         {
-            wnrWinner = Winner.None;
-            strPlayerName = strDefaultName;
+            winner = Winner.None;
+            playerName = strDefaultName;
         }
 
         public Player(Winner wnrWinner, string strPlayerName = "")
         {
-            this.wnrWinner = wnrWinner;
-            if(strPlayerName == "")
+            this.winner = wnrWinner;
+            if (strPlayerName == "")
             {
-                this.wnrWinner = wnrWinner;
+                this.winner = wnrWinner;
                 switch (wnrWinner)
                 {
                     case Winner.X:
@@ -45,27 +99,27 @@ namespace TicTacToeV1
                         break;
                 }
             }
-            this.strPlayerName = strPlayerName;
+            this.playerName = strPlayerName;
         }
 
         public void OnWinnerAnnounced(Winner wnrNewWinner)
         {
-            if (wnrNewWinner == wnrWinner)
-                intWinCount++;
+            if (wnrNewWinner == Winner || Winner.GetDrawEquivalentForWinner() == wnrNewWinner)
+                winCount++;
             else if (wnrNewWinner == Winner.Draw)
-                intDrawCount++;
+                drawCount++;
             else if (wnrNewWinner == Winner.None)
             {
                 //Do Nothing
             }
             else
-                intLossCount++;
+                lossCount++;
 
         }
 
         public void OnGameEnded()
         {
-            intFastestGameTime = intGameTime < intFastestGameTime ? intGameTime : intFastestGameTime;
+            fastestGameTime = GameTime < FastestGameTime ? GameTime : FastestGameTime;
         }
 
     }

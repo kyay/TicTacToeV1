@@ -31,10 +31,6 @@ namespace TicTacToeV1
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tmrPlayerTimeCounter = new System.Windows.Forms.Timer(this.components);
-            this.tmrFader = new System.Windows.Forms.Timer(this.components);
-            this.lblOScore = new System.Windows.Forms.Label();
-            this.lblXScore = new System.Windows.Forms.Label();
             this.lblTile9 = new TicTacToeV1.FadingLabel();
             this.lblTile8 = new TicTacToeV1.FadingLabel();
             this.lblTile7 = new TicTacToeV1.FadingLabel();
@@ -44,6 +40,10 @@ namespace TicTacToeV1
             this.lblTile3 = new TicTacToeV1.FadingLabel();
             this.lblTile2 = new TicTacToeV1.FadingLabel();
             this.lblTile1 = new TicTacToeV1.FadingLabel();
+            this.tmrPlayerTimeCounter = new System.Windows.Forms.Timer(this.components);
+            this.tmrFader = new System.Windows.Forms.Timer(this.components);
+            this.lblOScore = new System.Windows.Forms.Label();
+            this.lblXScore = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,38 +63,6 @@ namespace TicTacToeV1
             this.groupBox1.Size = new System.Drawing.Size(180, 185);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // tmrPlayerTimeCounter
-            // 
-            this.tmrPlayerTimeCounter.Enabled = true;
-            this.tmrPlayerTimeCounter.Interval = 1000;
-            this.tmrPlayerTimeCounter.Tick += new System.EventHandler(this.trmPlayerTimeCounter_Tick);
-            // 
-            // tmrFader
-            // 
-            this.tmrFader.Enabled = true;
-            this.tmrFader.Interval = 16;
-            this.tmrFader.Tick += new System.EventHandler(this.tmrFader_Tick);
-            // 
-            // lblOScore
-            // 
-            this.lblOScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
-            this.lblOScore.Location = new System.Drawing.Point(198, 133);
-            this.lblOScore.Name = "lblOScore";
-            this.lblOScore.Size = new System.Drawing.Size(305, 45);
-            this.lblOScore.TabIndex = 2;
-            this.lblOScore.Text = "Test: 99";
-            // 
-            // lblXScore
-            // 
-            this.lblXScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblXScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
-            this.lblXScore.Location = new System.Drawing.Point(198, 23);
-            this.lblXScore.Name = "lblXScore";
-            this.lblXScore.Size = new System.Drawing.Size(305, 45);
-            this.lblXScore.TabIndex = 1;
-            this.lblXScore.Text = "Test: 99";
             // 
             // lblTile9
             // 
@@ -231,6 +199,37 @@ namespace TicTacToeV1
             this.lblTile1.Text = "X";
             this.lblTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTile1.Click += new System.EventHandler(this.lblTile_Click);
+            // 
+            // tmrPlayerTimeCounter
+            // 
+            this.tmrPlayerTimeCounter.Interval = 1000;
+            this.tmrPlayerTimeCounter.Tick += new System.EventHandler(this.trmPlayerTimeCounter_Tick);
+            // 
+            // tmrFader
+            // 
+            this.tmrFader.Enabled = true;
+            this.tmrFader.Interval = 16;
+            this.tmrFader.Tick += new System.EventHandler(this.tmrFader_Tick);
+            // 
+            // lblOScore
+            // 
+            this.lblOScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
+            this.lblOScore.Location = new System.Drawing.Point(198, 133);
+            this.lblOScore.Name = "lblOScore";
+            this.lblOScore.Size = new System.Drawing.Size(305, 45);
+            this.lblOScore.TabIndex = 2;
+            this.lblOScore.Text = "Test: 99";
+            // 
+            // lblXScore
+            // 
+            this.lblXScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
+            this.lblXScore.Location = new System.Drawing.Point(198, 23);
+            this.lblXScore.Name = "lblXScore";
+            this.lblXScore.Size = new System.Drawing.Size(305, 45);
+            this.lblXScore.TabIndex = 1;
+            this.lblXScore.Text = "Test: 99";
             // 
             // frmTicTacToe
             // 

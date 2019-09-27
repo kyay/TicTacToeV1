@@ -15,6 +15,12 @@ namespace TicTacToeV1
 		O,
         //There is no winner and it's a draw
         [Description("It's a {0}!!!")]
-		Draw
-	}
+        Draw,
+        //It's a draw, but X was faster
+        [Description("It's a {1}, but {0} took less time, so {0} won!!!")]
+        DrawX,
+        //It's a draw, but O was faster
+        [Description("It's a {1}, but {0} took less time, so {0} won!!!")]
+        DrawO
+    }
 }
