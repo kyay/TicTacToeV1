@@ -27,13 +27,19 @@ namespace TicTacToeV1
                 return winner;
             }
         }
+
         public int WinCount
         {
             get
             {
                 return winCount;
             }
+            set
+            {
+                winCount = value;
+            }
         }
+
         public int LossCount
         {
             get
@@ -41,6 +47,7 @@ namespace TicTacToeV1
                 return lossCount;
             }
         }
+
         public int DrawCount
         {
             get
@@ -48,6 +55,7 @@ namespace TicTacToeV1
                 return drawCount;
             }
         }
+
         public string PlayerName
         {
             get
@@ -55,6 +63,7 @@ namespace TicTacToeV1
                 return playerName;
             }
         }
+
         public int FastestGameTime
         {
             get

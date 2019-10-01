@@ -204,6 +204,7 @@ namespace TicTacToeV1
 
         private void trmPlayerTimeCounter_Tick(object sender, EventArgs e)
         {
+            //Increase game time based on the current turn
             if (plrX != null && plrO != null)
             {
                 if (intTurns % 2 == 0)
@@ -215,6 +216,7 @@ namespace TicTacToeV1
 
         private void tmrFader_Tick(object sender, EventArgs e)
         {
+            //Fade in every label
             foreach (FadingLabel lblFadingLabel in lblTiles)
             {
                 if (lblFadingLabel.Text != "")
@@ -224,6 +226,7 @@ namespace TicTacToeV1
 
         private void frmTicTacToe_Load(object sender, EventArgs e)
         {
+            //Ask the users for their names and start the game
             plrX = new Player(Winner.X, Microsoft.VisualBasic.Interaction.InputBox("Please enter Player X's name:", "Player X"));
             plrO = new Player(Winner.O, Microsoft.VisualBasic.Interaction.InputBox("Please enter Player O's name:", "Player O"));
             UpdateScore();
@@ -237,6 +240,7 @@ namespace TicTacToeV1
 
         private void showStatsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Show the stats using an overridden ToString()
             MessageBox.Show(plrX.ToString() + "\n" + plrO.ToString());
         }
     }
