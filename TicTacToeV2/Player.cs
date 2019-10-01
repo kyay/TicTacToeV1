@@ -62,6 +62,7 @@ namespace TicTacToeV1
                 return fastestGameTime;
             }
         }
+
         public int GameTime
         {
             get
@@ -99,7 +100,7 @@ namespace TicTacToeV1
                         break;
                 }
             }
-            this.playerName = strPlayerName;
+            playerName = strPlayerName;
         }
 
         public void OnWinnerAnnounced(Winner wnrNewWinner)
@@ -124,12 +125,12 @@ namespace TicTacToeV1
 
         public override string ToString()
         {
-            return "Player symbol:" + Winner.ToString() + "\n" +
-                "Player name: " + PlayerName + "\n" +
+            return "Player name: " + PlayerName + "\n" + 
+                "Player symbol: " + Winner.ToString() + "\n" +
                 "Win count: " + WinCount + "\n" +
                 "Loss count: " + LossCount + "\n" +
                 "Draw count: " + DrawCount + "\n" +
-                "Fastest Game Time: " + FastestGameTime;
+                "Fastest Game Time: " + (FastestGameTime == int.MaxValue ? "Not set" : FastestGameTime.ToString());
         }
     }
 }
