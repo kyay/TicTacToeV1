@@ -241,7 +241,7 @@ namespace TicTacToeV1
         private void showStatsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Show the stats using an overridden ToString()
-            MessageBox.Show(plrX.ToString() + "\n" + plrO.ToString());
+            MessageBox.Show(plrX.ToString() + "\n\n" + plrO.ToString(), "Statistics");
         }
     }
 }

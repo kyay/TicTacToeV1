@@ -31,6 +31,14 @@ namespace TicTacToeV1
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tmrPlayerTimeCounter = new System.Windows.Forms.Timer(this.components);
+            this.tmrFader = new System.Windows.Forms.Timer(this.components);
+            this.lblOScore = new System.Windows.Forms.Label();
+            this.lblXScore = new System.Windows.Forms.Label();
+            this.mnuMain = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTile9 = new TicTacToeV1.FadingLabel();
             this.lblTile8 = new TicTacToeV1.FadingLabel();
             this.lblTile7 = new TicTacToeV1.FadingLabel();
@@ -40,16 +48,8 @@ namespace TicTacToeV1
             this.lblTile3 = new TicTacToeV1.FadingLabel();
             this.lblTile2 = new TicTacToeV1.FadingLabel();
             this.lblTile1 = new TicTacToeV1.FadingLabel();
-            this.tmrPlayerTimeCounter = new System.Windows.Forms.Timer(this.components);
-            this.tmrFader = new System.Windows.Forms.Timer(this.components);
-            this.lblOScore = new System.Windows.Forms.Label();
-            this.lblXScore = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showStatsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.mnuMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -68,6 +68,70 @@ namespace TicTacToeV1
             this.groupBox1.Size = new System.Drawing.Size(180, 185);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // tmrPlayerTimeCounter
+            // 
+            this.tmrPlayerTimeCounter.Interval = 1000;
+            this.tmrPlayerTimeCounter.Tick += new System.EventHandler(this.trmPlayerTimeCounter_Tick);
+            // 
+            // tmrFader
+            // 
+            this.tmrFader.Enabled = true;
+            this.tmrFader.Interval = 16;
+            this.tmrFader.Tick += new System.EventHandler(this.tmrFader_Tick);
+            // 
+            // lblOScore
+            // 
+            this.lblOScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
+            this.lblOScore.Location = new System.Drawing.Point(198, 148);
+            this.lblOScore.Name = "lblOScore";
+            this.lblOScore.Size = new System.Drawing.Size(305, 45);
+            this.lblOScore.TabIndex = 2;
+            this.lblOScore.Text = "Test: 99";
+            // 
+            // lblXScore
+            // 
+            this.lblXScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblXScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
+            this.lblXScore.Location = new System.Drawing.Point(198, 38);
+            this.lblXScore.Name = "lblXScore";
+            this.lblXScore.Size = new System.Drawing.Size(305, 45);
+            this.lblXScore.TabIndex = 1;
+            this.lblXScore.Text = "Test: 99";
+            // 
+            // mnuMain
+            // 
+            this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.mnuMain.Location = new System.Drawing.Point(0, 0);
+            this.mnuMain.Name = "mnuMain";
+            this.mnuMain.Size = new System.Drawing.Size(515, 24);
+            this.mnuMain.TabIndex = 3;
+            this.mnuMain.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem,
+            this.showStatsToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // showStatsToolStripMenuItem
+            // 
+            this.showStatsToolStripMenuItem.Name = "showStatsToolStripMenuItem";
+            this.showStatsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.showStatsToolStripMenuItem.Text = "Show Stats";
+            this.showStatsToolStripMenuItem.Click += new System.EventHandler(this.showStatsToolStripMenuItem_Click);
             // 
             // lblTile9
             // 
@@ -205,70 +269,6 @@ namespace TicTacToeV1
             this.lblTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTile1.Click += new System.EventHandler(this.lblTile_Click);
             // 
-            // tmrPlayerTimeCounter
-            // 
-            this.tmrPlayerTimeCounter.Interval = 1000;
-            this.tmrPlayerTimeCounter.Tick += new System.EventHandler(this.trmPlayerTimeCounter_Tick);
-            // 
-            // tmrFader
-            // 
-            this.tmrFader.Enabled = true;
-            this.tmrFader.Interval = 16;
-            this.tmrFader.Tick += new System.EventHandler(this.tmrFader_Tick);
-            // 
-            // lblOScore
-            // 
-            this.lblOScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(0)))));
-            this.lblOScore.Location = new System.Drawing.Point(198, 148);
-            this.lblOScore.Name = "lblOScore";
-            this.lblOScore.Size = new System.Drawing.Size(305, 45);
-            this.lblOScore.TabIndex = 2;
-            this.lblOScore.Text = "Test: 99";
-            // 
-            // lblXScore
-            // 
-            this.lblXScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblXScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(139)))), ((int)(((byte)(139)))));
-            this.lblXScore.Location = new System.Drawing.Point(198, 38);
-            this.lblXScore.Name = "lblXScore";
-            this.lblXScore.Size = new System.Drawing.Size(305, 45);
-            this.lblXScore.TabIndex = 1;
-            this.lblXScore.Text = "Test: 99";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(515, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
-            this.showStatsToolStripMenuItem});
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // showStatsToolStripMenuItem
-            // 
-            this.showStatsToolStripMenuItem.Name = "showStatsToolStripMenuItem";
-            this.showStatsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.showStatsToolStripMenuItem.Text = "Show Stats";
-            this.showStatsToolStripMenuItem.Click += new System.EventHandler(this.showStatsToolStripMenuItem_Click);
-            // 
             // frmTicTacToe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,14 +277,14 @@ namespace TicTacToeV1
             this.Controls.Add(this.lblOScore);
             this.Controls.Add(this.lblXScore);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mnuMain);
+            this.MainMenuStrip = this.mnuMain;
             this.Name = "frmTicTacToe";
             this.Text = "Tic Tac Toe";
             this.Load += new System.EventHandler(this.frmTicTacToe_Load);
             this.groupBox1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnuMain.ResumeLayout(false);
+            this.mnuMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,7 +306,7 @@ namespace TicTacToeV1
         private System.Windows.Forms.Label lblOScore;
         private System.Windows.Forms.Timer tmrPlayerTimeCounter;
         private System.Windows.Forms.Timer tmrFader;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mnuMain;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showStatsToolStripMenuItem;
